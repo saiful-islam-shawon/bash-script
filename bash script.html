@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="bash-script">bash script</h1>
+<p><strong>create a folder</strong><br>
+<code>mkdir folder_name</code></p>
+<p><strong>to see all file under a folder</strong><br>
+<code>ls</code></p>
+<p><strong>create a file inside a folder</strong><br>
+<code>touch file_name</code></p>
+<p><strong>Write into a log file</strong><br>
+1: Overwrite (replace content)<br>
+<code>echo "Hello Shawon" &gt; shawon.log</code><br>
+2: Append (add new content, most common)<br>
+<code>echo "New log entry" &gt;&gt; shawon.log</code></p>
+<p><strong>how to view file content in terminal</strong><br>
+<code>cat file_name</code><br>
+Copy content to another file<br>
+<code>cat file1.txt &gt; file2.txt</code></p>
+<p><strong>want to search any specific text (patterns) inside files or command output in Bash.</strong><br>
+1: Basic example<br>
+<code>grep "error" file_name</code><br>
+2: Find errors in a log file<br>
+<code>grep "ERROR" app.log</code><br>
+3: Ignore case (error / Error / ERROR)<br>
+<code>grep -i "error" app.log</code></p>
+<p><strong>count how many errors occurred</strong><br>
+<code>grep -c "error" shawon.log</code></p>
+<p><strong>Find log files updated within one day</strong><br>
+1:<br>
+<code>find . -name "*.log" -mtime -1</code><br>
+2: Show contents of recent log files<br>
+<code>find . -name "*.log" -mtime -1 -exec cat {} \;</code></p>
+<h1 id="what-is-shell-script">what is shell script</h1>
+<p>A <strong>shell script</strong> is a file that contains a sequence of commands written for a command-line interpreter (called a <em>shell</em>) such as <strong>Bash</strong>.</p>
+<p>Instead of typing commands one by one in the terminal, you save them in a file and run them all together.<br>
+1: Example</p>
+<pre><code>#!/bin/bash
+
+echo "Hello Shawon"
+pwd
+date
+</code></pre>
+<p>2: shell file like this to the end point<br>
+<code>.sh</code><br>
+example<br>
+<code>analyse-log.sh</code></p>
+<p><strong>Vim – A powerful text editor for Linux</strong><br>
+<code>vim analyse-log.sh</code> is a command that opens (or creates) a file named <strong><code>analyse-log.sh</code></strong> using the <strong>Vim</strong> editor.<br>
+🔹 Break it down<br>
+👉 <code>vim</code></p>
+<ul>
+<li>A powerful <strong>terminal-based text editor</strong></li>
+<li>Used to create and edit files in Linux/Unix systems</li>
+</ul>
+<p>👉 <code>analyse-log.sh</code></p>
+<ul>
+<li>The file name</li>
+<li><code>.sh</code> means it is likely a <strong>shell script</strong> file (used with <strong>Bash</strong>)<br>
+<code>vim analyse-log.sh</code><br>
+after press i to enable insert mode<br>
+<code>i</code><br>
+1: to save file in shell script just press esc<br>
+<code>Esc</code><br>
+now press :<br>
+<code>:</code><br>
+now press wq<br>
+<code>wq</code><br>
+now press enter</li>
+</ul>
+<p>#: write this inside bash</p>
+<pre><code>#!/bin/bash
+
+echo "New log entry" &gt;&gt; shawon.log
+find . -name "*.log" -mtime -1
+</code></pre>
+<p><strong>to execute .sh file</strong><br>
+<code>./sh_file_name</code><br>
+for example<br>
+<code>./analyse-log.sh</code><br>
+if show permission denied<br>
+enter this command<br>
+<code>chmod +x analyse-log.sh</code><br>
+now execute the file<br>
+<code>./analyse-log.sh</code></p>
+<p><strong>want to see the directory</strong><br>
+<code>pwd</code></p>
+<p><strong>If want to move file and want to rename a file name</strong><br>
+1: Move files to another location<br>
+<code>mv file.txt /home/user/Documents/</code><br>
+2: Rename file<br>
+<code>mv oldname.txt newname.txt</code></p>
+<p><strong># Bash  Variables</strong></p>
+<pre><code>name="John Doe"
+echo  "Hello, $name!"
+number=42
+echo "The number is $number"
+</code></pre>
+</div>
+</body>
+
+</html>
